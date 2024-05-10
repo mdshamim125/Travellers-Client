@@ -2,6 +2,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/Hooks";
 import toast from "react-hot-toast";
 import { useState } from "react";
+import axios from "axios";
 
 const Register = () => {
   const [registerError, setRegisterError] = useState("");
@@ -46,6 +47,14 @@ const Register = () => {
 
       await updateUserProfile(name, photo);
       setUser({ ...result?.user, photoURL: photo, displayName: name });
+      const { data } = await axios.post(
+        `${import.meta.env.VITE_API_URL}/jwt`,
+        {
+          email: result?.user?.email,
+        },
+        { withCredentials: true }
+      );
+      console.log(data);
 
       navigate(from, { replace: true });
       toast.success("Sign-up Successful");
@@ -58,7 +67,14 @@ const Register = () => {
   const handleGoogleSignIn = async () => {
     try {
       const result = await googleLogin();
-
+      const { data } = await axios.post(
+        `${import.meta.env.VITE_API_URL}/jwt`,
+        {
+          email: result?.user?.email,
+        },
+        { withCredentials: true }
+      );
+      console.log(data);
       toast.success("Sign-in Successful");
       navigate(from, { replace: true });
     } catch (err) {

@@ -26,7 +26,7 @@ const Navbar = () => {
   const displayName = user?.displayName || "";
   const photoURL =
     user?.photoURL ||
-    "https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg";
+    "https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg";
 
   const links = (
     <>
@@ -97,7 +97,7 @@ const Navbar = () => {
             </ul>
           </div>
           <a className="btn text-base md:text-xl lg:text-2xl font-bold flex gap-0">
-            News<span className="text-blue-600">Portal</span>
+            T<span className="text-blue-600">B</span>
           </a>
         </div>
         <div className="navbar-center hidden lg:flex">
@@ -153,7 +153,7 @@ const Navbar = () => {
                   <Link to="/">
                     <button
                       onClick={logout}
-                      className="btn text-white font-bold btn-primary mr-2"
+                      className="text-white font-medium py-2 rounded-md px-3 bg-cyan-600 mr-2"
                     >
                       Logout
                     </button>
@@ -175,7 +175,7 @@ const Navbar = () => {
                 </>
               ) : (
                 <Link to="/login">
-                  <button className="btn text-white font-bold btn-primary">
+                  <button className=" text-white font-medium py-2 rounded-md px-3 bg-cyan-600">
                     Login
                   </button>
                 </Link>

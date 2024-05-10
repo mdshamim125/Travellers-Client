@@ -3,12 +3,14 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import { router } from "./components/route/Route.jsx";
 import { RouterProvider } from "react-router-dom";
-// import FirebaseProvider from "./pages/firebase-provider/FirebaseProvider.jsx";
+import FirebaseProvider from "./pages/firebase-provider/FirebaseProvider.jsx";
+import { Toaster } from "react-hot-toast";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    {/* <FirebaseProvider> */}
+    <FirebaseProvider>
       <RouterProvider router={router} />
-    {/* </FirebaseProvider> */}
+      <Toaster />
+    </FirebaseProvider>
   </React.StrictMode>
 );

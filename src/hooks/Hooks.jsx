@@ -1,11 +1,9 @@
-import React from 'react';
+import { useContext } from "react";
+import { AuthContext } from "../pages/firebase-provider/FirebaseProvider";
 
-const Hooks = () => {
-    return (
-        <div>
-            
-        </div>
-    );
+const useAuth = () => {
+  const all = useContext(AuthContext);
+  return all;
 };
 
-export default Hooks;
+export default useAuth;

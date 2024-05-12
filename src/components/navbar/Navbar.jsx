@@ -35,26 +35,32 @@ const Navbar = () => {
           Home
         </NavLink>
       </li>
-      <li>
-        <NavLink className="mr-3" to="/add-blog">
-          Add Blog
-        </NavLink>
-      </li>
+      {user && (
+        <li>
+          <NavLink className="mr-3" to="/add-blog">
+            Add Blog
+          </NavLink>
+        </li>
+      )}
+
       <li>
         <NavLink className="mr-3" to="/all-blogs">
           All Blogs
         </NavLink>
       </li>
+
       <li>
         <NavLink className="mr-3" to="/featured-blogs">
           Featured Blogs
         </NavLink>
       </li>
-      <li>
-        <NavLink className="mr-3" to="/wish-list">
-          WishList
-        </NavLink>
-      </li>
+      {user && (
+        <li>
+          <NavLink className="mr-3" to="/wish-list">
+            WishList
+          </NavLink>
+        </li>
+      )}
 
       {!user && (
         <li>

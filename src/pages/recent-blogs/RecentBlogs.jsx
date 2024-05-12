@@ -25,7 +25,7 @@ const RecentBlogs = () => {
         Recent Blogs Section
       </h2>
 
-      <div className="container px-6 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-between">
+      <div className="container px-6 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-between mb-16">
         {blogs.slice(0, 6).map((blog, index) => (
           <BlogCard
             key={index}

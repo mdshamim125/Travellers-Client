@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import useAuth from "../../hooks/Hooks";
 import axios from "axios";
+import toast from "react-hot-toast";
 
 const WishList = () => {
   const [wishList, setWishList] = useState([]);
@@ -16,6 +17,19 @@ const WishList = () => {
     getData();
   }, [email]);
   console.log(wishList);
+
+  const removeHandlerFromWishList = async (blogId) => {
+    try {
+      await axios.delete(
+        `${import.meta.env.VITE_API_URL}/wish-list/${email}/${blogId}`
+      );
+      setWishList(wishList.filter((blog) => blog.blogId !== blogId));
+      toast.success("successfully removed the blog from your wish-list")
+    } catch (error) {
+      console.error("Error removing blog from wishlist:", error);
+    }
+  };
+
   return (
     <div>
       <h3 className="text-center font-bold text-2xl mt-10 mb-4">
@@ -40,7 +54,7 @@ const WishList = () => {
             </button>
             <button
               className="bg-red-500 text-white py-1 px-2 rounded-md mt-2"
-              // onClick={() => removeFromWishList(blog.blogId)}
+              onClick={() => removeHandlerFromWishList(blog.blogId)}
             >
               Remove Wishlist
             </button>

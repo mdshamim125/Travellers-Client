@@ -30,7 +30,7 @@ const AddBlog = () => {
       );
       // console.log(data);
       toast.success("Blog added Successfully!");
-      e.target.form.reset();
+      e.target.reset();
     } catch (err) {
       // console.log(err);
     }

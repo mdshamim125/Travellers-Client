@@ -29,6 +29,7 @@ const RecentBlogs = () => {
         {blogs.slice(0, 6).map((blog, index) => (
           <BlogCard
             key={index}
+            blogId={blog._id}
             title={blog.title}
             category={blog.category}
             image={blog.image}

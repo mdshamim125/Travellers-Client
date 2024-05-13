@@ -1,7 +1,10 @@
 import axios from "axios";
 import toast from "react-hot-toast";
+import useAuth from "../../hooks/Hooks";
 
 const AddBlog = () => {
+  const { user } = useAuth();
+  // console.log(user?.email);
   const handleSubmit = async (e) => {
     e.preventDefault();
     const title = e.target.title.value;
@@ -9,6 +12,7 @@ const AddBlog = () => {
     const category = e.target.category.value;
     const short_description = e.target.short_description.value;
     const long_description = e.target.long_description.value;
+    const email = user?.email;
     console.log(title, image, category, short_description, long_description);
 
     const blogData = {
@@ -17,6 +21,7 @@ const AddBlog = () => {
       category,
       short_description,
       long_description,
+      email,
     };
     try {
       const { data } = await axios.post(
@@ -25,7 +30,7 @@ const AddBlog = () => {
       );
       console.log(data);
       toast.success("Blog added Successfully!");
-      e.form.reset();
+      e.target.form.reset();
     } catch (err) {
       console.log(err);
     }

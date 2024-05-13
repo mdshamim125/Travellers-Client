@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const MyBlogCard = ({ _id, title, category, image, shortDescription }) => {
-    console.log(_id);
+    // console.log(_id);
   return (
     <div className="max-w-sm rounded overflow-hidden shadow-lg">
       <img src={image} alt={title} className="w-full h-[300px]" />

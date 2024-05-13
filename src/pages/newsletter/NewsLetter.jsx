@@ -4,12 +4,12 @@ const NewsLetter = () => {
   const handleSubscribe = (e) => {
     e.preventDefault();
     const email = e.target.email.value;
-    console.log(email);
+    // console.log(email);
     toast.success("Thanks You For Subscribing Us.");
     e.target.reset();
   };
   return (
-    <header className="bg-white dark:bg-gray-900">
+    <header className="bg-slate-200 dark:bg-gray-900  rounded-sm">
       <div className="container px-6 py-16 mx-auto">
         <div className="items-center lg:flex">
           <div className="w-full lg:w-1/2">
@@ -18,17 +18,17 @@ const NewsLetter = () => {
                 Subscribe To The{" "}
                 <span className="text-blue-500">Newsletter</span>
               </h1>
-
+{/* 
               <p className="mt-3 text-gray-600 dark:text-gray-400">
                 be the first to knows when our{" "}
                 <span className="font-medium text-blue-500">Brand</span> is live
-              </p>
+              </p> */}
 
               <form onSubmit={handleSubscribe}>
                 <div className="flex flex-col mt-6 space-y-3 lg:space-y-0 lg:flex-row">
                   <input
                     id="email"
-                    type="text"
+                    type="email"
                     name="email"
                     required
                     className="px-4 py-2 text-gray-700 bg-white border rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:outline-none focus:ring focus:ring-opacity-40 focus:ring-blue-300"

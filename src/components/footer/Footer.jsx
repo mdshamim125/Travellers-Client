@@ -7,17 +7,10 @@ const Footer = () => {
         <div className="lg:flex">
           <div className="w-full lg:w-2/5">
             <div className="px-6">
-              <a href="#">
-                <img
-                  className="w-auto h-7"
-                  src="https://merakiui.com/images/full-logo.svg"
-                  alt=""
-                />
-              </a>
+              
 
               <p className="max-w-sm mt-2 text-gray-500 dark:text-gray-400">
-                Join 31,000+ others and never miss out on new tips, tutorials,
-                and more.
+                Join 31,000+ others and never miss our  new trip and other facilities.
               </p>
 
               <div className="flex mt-6 -mx-2">
@@ -156,7 +149,7 @@ const Footer = () => {
 
         <div>
           <p className="text-center text-gray-500 dark:text-gray-400">
-            © Brand 2020 - All rights reserved
+            © TB 2024 - All rights reserved
           </p>
         </div>
       </div>

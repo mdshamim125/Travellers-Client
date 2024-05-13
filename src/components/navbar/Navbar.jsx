@@ -46,7 +46,7 @@ const Navbar = () => {
       {user && (
         <li>
           <NavLink className="mr-3" to="/my-blogs">
-            My Blogs
+            Update Blog
           </NavLink>
         </li>
       )}

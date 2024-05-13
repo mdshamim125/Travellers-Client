@@ -54,12 +54,12 @@ const Register = () => {
         },
         { withCredentials: true }
       );
-      console.log(data);
+      // console.log(data);
 
       navigate(from, { replace: true });
       toast.success("Sign-up Successful");
     } catch (err) {
-      console.log(err);
+      // console.log(err);
       toast.error(err?.message);
     }
   };

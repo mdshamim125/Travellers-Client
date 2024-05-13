@@ -16,7 +16,7 @@ const Login = () => {
   const handleGoogleSignIn = async () => {
     try {
       const result = await googleLogin();
-      console.log(result.user);
+      // console.log(result.user);
       const { data } = await axios.post(
         `${import.meta.env.VITE_API_URL}/jwt`,
         {
@@ -24,11 +24,11 @@ const Login = () => {
         },
         { withCredentials: true }
       );
-      console.log(data);
+      // console.log(data);
       toast.success("Sign-in Successful");
       navigate(from, { replace: true });
     } catch (err) {
-      console.log(err);
+      // console.log(err);
       toast.error("something went wrong!");
     }
   };
@@ -38,10 +38,10 @@ const Login = () => {
     const form = e.target;
     const email = form.email.value;
     const pass = form.password.value;
-    console.log({ email, pass });
+    // console.log({ email, pass });
     try {
       const result = await signInUser(email, pass);
-      console.log(result.user);
+      // console.log(result.user);
       const { data } = await axios.post(
         `${import.meta.env.VITE_API_URL}/jwt`,
         {
@@ -49,11 +49,11 @@ const Login = () => {
         },
         { withCredentials: true }
       );
-      console.log(data);
+      // console.log(data);
       toast.success("Sign-in Successful");
       navigate(from, { replace: true });
     } catch (err) {
-      console.log(err);
+      // console.log(err);
       toast.error("please enter a valid email or password!");
     }
   };

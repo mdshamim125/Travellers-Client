@@ -13,7 +13,7 @@ const AddBlog = () => {
     const short_description = e.target.short_description.value;
     const long_description = e.target.long_description.value;
     const email = user?.email;
-    console.log(title, image, category, short_description, long_description);
+    // console.log(title, image, category, short_description, long_description);
 
     const blogData = {
       title,
@@ -28,11 +28,11 @@ const AddBlog = () => {
         `${import.meta.env.VITE_API_URL}/blogs`,
         blogData
       );
-      console.log(data);
+      // console.log(data);
       toast.success("Blog added Successfully!");
       e.target.form.reset();
     } catch (err) {
-      console.log(err);
+      // console.log(err);
     }
   };
 

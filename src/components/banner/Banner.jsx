@@ -2,7 +2,7 @@
 
 const Banner = () => {
   return (
-    <header className="bg-white dark:bg-gray-900">
+    <header className="bg-slate-200 dark:bg-gray-900">
       <div className="container px-6 py-16 mx-auto">
         <div className="items-center lg:flex">
           <div className="w-full lg:w-1/2">
@@ -25,8 +25,8 @@ const Banner = () => {
 
           <div className="flex items-center justify-center w-full mt-6 lg:mt-0 lg:w-1/2">
             <img
-              className="w-full h-full lg:max-w-3xl"
-              src="https://merakiui.com/images/components/Catalogue-pana.svg"
+              className="w-[700px] h-[400px] rounded-md"
+              src="https://i.ibb.co/jbzSfwD/mike-swigunski-Fz0-XVa-r-LQI-unsplash.jpg"
               alt="Catalogue-pana.svg"
             />
           </div>

@@ -20,7 +20,7 @@ const AllBlogs = () => {
     getData();
   }, [filter, search]);
 
-  console.log(blogs);
+  // console.log(blogs);
 
   const handleSearch = (e) => {
     e.preventDefault();

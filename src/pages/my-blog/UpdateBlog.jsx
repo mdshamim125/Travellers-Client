@@ -7,7 +7,7 @@ import toast from "react-hot-toast";
 const UpdateBlog = () => {
   const { id } = useParams();
   const { user, loading } = useAuth();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const [blog, setBlog] = useState({
     title: "",
     category: "",
@@ -25,7 +25,7 @@ const UpdateBlog = () => {
     };
     getData();
   }, [id]);
-//   console.log(blog);
+  //   console.log(blog);
 
   //   useEffect(() => {
   //     if (!user) return;
@@ -41,7 +41,7 @@ const UpdateBlog = () => {
   //       });
   //   }, [user, id]);
 
-  const handleSubmit = async(e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const title = e.target.title.value;
     const image = e.target.image.value;
@@ -51,27 +51,27 @@ const UpdateBlog = () => {
     const email = user?.email;
     // console.log(title, image, category, short_description, long_description, email);
     const blogData = {
-        title,
-        image,
-        category,
-        short_description,
-        long_description,
-        email,
-      };
+      title,
+      image,
+      category,
+      short_description,
+      long_description,
+      email,
+    };
 
-      try {
-        const { data } = await axios.put(
-          `${import.meta.env.VITE_API_URL}/blog/${id}`,
-          blogData
-        )
-        console.log(data)
-        toast.success('Blog Data Updated Successfully!')
-        navigate('/my-blogs')
-      } catch (err) {
-        console.log(err)
-        toast.error(err.message)
-      }
-
+    try {
+      const { data } = await axios.put(
+        `${import.meta.env.VITE_API_URL}/blog/${id}`,
+        blogData
+      );
+      // console.log(data)
+      toast.success("Blog Data Updated Successfully!");
+      e.target.reset();
+      navigate("/my-blogs");
+    } catch (err) {
+      // console.log(err)
+      toast.error(err.message);
+    }
   };
 
   return (

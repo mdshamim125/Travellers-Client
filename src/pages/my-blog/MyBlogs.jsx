@@ -6,7 +6,7 @@ import MyBlogCard from "./MyBlogCard";
 const MyBlogs = () => {
   const [myBlogs, setMyBlogs] = useState([]);
   const { user } = useAuth();
-  console.log(user?.email);
+//   console.log(user?.email);
 
   useEffect(() => {
     const getData = async () => {
@@ -19,7 +19,7 @@ const MyBlogs = () => {
     getData();
   }, [user]);
 
-  console.log(myBlogs);
+//   console.log(myBlogs);
   return (
     <div>
       <h2 className="text-center font-bold text-2xl mt-10 mb-4">My Blogs</h2>

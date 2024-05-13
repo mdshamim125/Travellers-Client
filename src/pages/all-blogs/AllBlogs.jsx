@@ -71,10 +71,12 @@ const AllBlogs = () => {
         {blogs.map((blog, index) => (
           <BlogCard
             key={index}
+            blogId={blog._id}
             title={blog.title}
             category={blog.category}
             image={blog.image}
             shortDescription={blog.short_description}
+            longDescription={blog.long_description}
           />
         ))}
       </div>

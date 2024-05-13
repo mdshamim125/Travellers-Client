@@ -1,11 +1,54 @@
-import React from 'react';
+import React, { useEffect, useState } from "react";
+import useAuth from "../../hooks/Hooks";
+import axios from "axios";
 
 const WishList = () => {
-    return (
-        <div>
-            
-        </div>
-    );
+  const [wishList, setWishList] = useState([]);
+  const { user } = useAuth();
+  const email = user?.email;
+  useEffect(() => {
+    const getData = async () => {
+      const { data } = await axios(
+        `${import.meta.env.VITE_API_URL}/wish-list/${email}`
+      );
+      setWishList(data);
+    };
+    getData();
+  }, [email]);
+  console.log(wishList);
+  return (
+    <div>
+      <h3 className="text-center font-bold text-2xl mt-10 mb-4">
+        My Wish-List
+      </h3>
+      <div className="container px-6 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-between mb-16">
+        {wishList.map((blog) => (
+          <div key={blog.blogId} className="my-4 border p-4 rounded-md">
+            <img
+              src={blog.image}
+              alt={blog.title}
+              className="w-full h-[300px]"
+            />
+            <h2 className="text-xl font-bold">{blog.title}</h2>
+            <p className=" text-gray-600 font-xl font-medium">
+              {blog.category}
+            </p>
+            <p className="text-gray-600">{blog.shortDescription}</p>
+
+            <button className="bg-blue-500 text-white py-1 px-2 rounded-md mt-2 mr-2">
+              Details
+            </button>
+            <button
+              className="bg-red-500 text-white py-1 px-2 rounded-md mt-2"
+              // onClick={() => removeFromWishList(blog.blogId)}
+            >
+              Remove Wishlist
+            </button>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 };
 
 export default WishList;

@@ -1,8 +1,43 @@
-import React from 'react';
+import axios from "axios";
+import React from "react";
+import toast from "react-hot-toast";
+import { Link } from "react-router-dom";
+import useAuth from "../../hooks/Hooks";
 
-const BlogCard = ({ title, category, image, shortDescription, onClickDetails, onClickWishlist }) => {
+const BlogCard = ({
+  blogId,
+  title,
+  category,
+  image,
+  shortDescription,
+  longDescription,
+}) => {
+  const { user } = useAuth();
+  const email = user?.email;
+  const blogData = {
+    email,
+    blogId,
+    title,
+    category,
+    image,
+    shortDescription,
+    longDescription,
+  };
+  const wishListHandler = async (blogData) => {
+    // console.log(blogData);
+    try {
+      const { data } = await axios.post(
+        `${import.meta.env.VITE_API_URL}/wish-list`,
+        blogData
+      );
+      // console.log(data);
+      toast.success("Blog added Successfully to the wish-list!");
+    } catch (err) {
+      console.log(err);
+    }
+  };
   return (
-    <div className="max-w-sm rounded overflow-hidden shadow-lg">
+    <div className="max-w-sm  overflow-hidden shadow-lg my-4 border p-4 rounded-md">
       <img src={image} alt={title} className="w-full h-[300px]" />
       <div className="px-6 py-4">
         <div className="font-bold text-xl mb-2">{title}</div>
@@ -10,8 +45,15 @@ const BlogCard = ({ title, category, image, shortDescription, onClickDetails, on
         <p className="text-gray-700 text-base mt-2">{shortDescription}</p>
       </div>
       <div className="px-6 py-4">
-        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2" onClick={onClickDetails}>Details</button>
-        <button className="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded" onClick={onClickWishlist}>Wishlist</button>
+        <Link className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2">
+          Details
+        </Link>
+        <Link
+          className="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded"
+          onClick={() => wishListHandler(blogData)}
+        >
+          Wishlist
+        </Link>
       </div>
     </div>
   );

@@ -4,11 +4,12 @@ import Home from "../../pages/home/Home";
 import Login from "../../pages/login/Login";
 import Register from "../../pages/register/Register";
 import ErrorPage from "../../pages/error-page/ErrorPage";
-import AllBlogs from './../../pages/all-blogs/AllBlogs';
-import AddBlog from './../../pages/add-blog/AddBlog';
-import FeaturedBlogs from './../../pages/featured-blogs/FeaturedBlogs';
-import WishList from './../../pages/wishlist/WishList';
+import AllBlogs from "./../../pages/all-blogs/AllBlogs";
+import AddBlog from "./../../pages/add-blog/AddBlog";
+import FeaturedBlogs from "./../../pages/featured-blogs/FeaturedBlogs";
+import WishList from "./../../pages/wishlist/WishList";
 import MyBlogs from "../../pages/my-blog/MyBlogs";
+import UpdateBlog from "../../pages/my-blog/UpdateBlog";
 
 export const router = createBrowserRouter([
   {
@@ -30,7 +31,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/all-blogs",
-        element: <AllBlogs></AllBlogs>
+        element: <AllBlogs></AllBlogs>,
       },
       {
         path: "/add-blog",
@@ -41,13 +42,17 @@ export const router = createBrowserRouter([
         element: <FeaturedBlogs></FeaturedBlogs>,
       },
       {
-        path:"/wish-list",
-        element:<WishList></WishList>
+        path: "/wish-list",
+        element: <WishList></WishList>,
       },
       {
-        path:"/my-blogs",
-        element:<MyBlogs></MyBlogs>
-      }
+        path: "/my-blogs",
+        element: <MyBlogs></MyBlogs>,
+      },
+      {
+        path: "/update/:id",
+        element: <UpdateBlog />,
+      },
     ],
   },
 ]);

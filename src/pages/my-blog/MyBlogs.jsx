@@ -11,7 +11,7 @@ const MyBlogs = () => {
   useEffect(() => {
     const getData = async () => {
       const { data } = await axios(
-        `${import.meta.env.VITE_API_URL}/blogs/${user?.email}`
+        `${import.meta.env.VITE_API_URL}/my-blogs/${user?.email}`
       );
 
       setMyBlogs(data);
@@ -32,6 +32,7 @@ const MyBlogs = () => {
             category={blog.category}
             image={blog.image}
             shortDescription={blog.short_description}
+            _id={blog._id}
           />
         ))}
       </div>

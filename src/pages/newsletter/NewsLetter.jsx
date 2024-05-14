@@ -9,7 +9,7 @@ const NewsLetter = () => {
     e.target.reset();
   };
   return (
-    <header className="bg-slate-200 dark:bg-gray-900  rounded-sm">
+    <header className="bg-slate-300 dark:bg-gray-900  rounded-sm">
       <div className="container px-6 py-16 mx-auto">
         <div className="items-center lg:flex">
           <div className="w-full lg:w-1/2">
@@ -45,8 +45,8 @@ const NewsLetter = () => {
 
           <div className="flex items-center justify-center w-full mt-6 lg:mt-0 lg:w-1/2">
             <img
-              className="w-full h-full max-w-md"
-              src="https://merakiui.com/images/components/Email-campaign-bro.svg"
+              className="w-full h-full rounded-md"
+              src="https://i.ibb.co/5sBnStq/10769817-4529564.jpg"
               alt="email illustration vector art"
             />
           </div>

@@ -1,8 +1,17 @@
-# React + Vite
+# TRAVELERS
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to TRAVELERS!
 
-Currently, two official plugins are available:
+## Live Site
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+[Visit TRAVELERS](https://travel-blog-cf01e.web.app)
+
+## Features and Characteristics
+
+- **Comprehensive mongoDB Database**: VisIt Our TRAVELERS.
+- **Added Collection of blogs**: Different categories blogs are added in our TRAVELERS.
+- **User WishList**: Users can add blogs to wish-list and also show their own wish-list.
+- **User-Friendly Interface**: It is the most attractive thing in this website.You can register, login our travelers and also you can added your blogs of different categories if you are logged-in.
+- **Responsive Design**: Access TRAVELERS from any device, whether it's your desktop, tablet, or smartphone.
+
+-**Users Can Subscribe Us To Get Latest News**: To know about the beautiful places with marvelous journey.

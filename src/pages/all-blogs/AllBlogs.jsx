@@ -29,7 +29,7 @@ const AllBlogs = () => {
   };
 
   return (
-    <div>
+    <div className="min-h-[calc(100vh-250px)] my-12">
       <div className="flex flex-col md:flex-row justify-center items-center gap-5 my-6">
         <div>
           <select

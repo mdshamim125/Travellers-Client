@@ -24,14 +24,14 @@ const WishList = () => {
         `${import.meta.env.VITE_API_URL}/wish-list/${email}/${blogId}`
       );
       setWishList(wishList.filter((blog) => blog.blogId !== blogId));
-      toast.success("successfully removed the blog from your wish-list")
+      toast.success("successfully removed the blog from your wish-list");
     } catch (error) {
       console.error("Error removing blog from wishlist:", error);
     }
   };
 
   return (
-    <div>
+    <div className="min-h-[calc(100vh-250px)] my-12">
       <h3 className="text-center font-bold text-2xl mt-10 mb-4">
         My Wish-List
       </h3>

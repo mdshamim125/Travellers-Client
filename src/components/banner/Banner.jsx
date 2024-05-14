@@ -2,7 +2,7 @@
 
 const Banner = () => {
   return (
-    <header className="bg-slate-200 dark:bg-gray-900">
+    <header className="bg-slate-300 dark:bg-gray-900">
       <div className="container px-6 py-16 mx-auto">
         <div className="items-center lg:flex">
           <div className="w-full lg:w-1/2">

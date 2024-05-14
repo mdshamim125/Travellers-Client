@@ -21,7 +21,7 @@ const MyBlogs = () => {
 
 //   console.log(myBlogs);
   return (
-    <div>
+    <div className="min-h-[calc(100vh-250px)] my-12">
       <h2 className="text-center font-bold text-2xl mt-10 mb-4">My Added Blogs</h2>
 
       <div className="container px-6 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-between mb-16">

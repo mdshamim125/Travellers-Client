@@ -112,7 +112,7 @@ const Navbar = () => {
           </div>
           <Link to='/' className="flex justify-center items-center">
             <a className="text-base md:text-xl lg:text-3xl font-bold ml-1 flex gap-0">
-              TRAV<span className="text-blue-600">ELER</span>
+              TRAV<span className="text-blue-600">ELERS</span>
             </a>
             <img
               src="/public/TRAVELING_BLOG-.png"

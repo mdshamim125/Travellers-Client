@@ -110,9 +110,15 @@ const Navbar = () => {
               {links}
             </ul>
           </div>
-          <a className="btn text-base md:text-xl lg:text-2xl font-bold flex gap-0">
-            T<span className="text-blue-600">B</span>
-          </a>
+          <Link to='/' className="flex justify-center items-center">
+            <a className="text-base md:text-xl lg:text-3xl font-bold ml-1 flex gap-0">
+              TRAV<span className="text-blue-600">ELER</span>
+            </a>
+            <img
+              src="/public/TRAVELING_BLOG-.png"
+              className="w-16 ml-1 bg-black rounded-full"
+            />
+          </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1 text-white font-bold">

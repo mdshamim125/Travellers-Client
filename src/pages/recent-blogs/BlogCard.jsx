@@ -1,7 +1,7 @@
 import axios from "axios";
 import React from "react";
 import toast from "react-hot-toast";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/Hooks";
 
 const BlogCard = ({
@@ -13,6 +13,7 @@ const BlogCard = ({
   longDescription,
 }) => {
   const { user } = useAuth();
+  const navigate = useNavigate();
   const email = user?.email;
   const blogData = {
     email,
@@ -24,16 +25,20 @@ const BlogCard = ({
     longDescription,
   };
   const wishListHandler = async (blogData) => {
-    // console.log(blogData);
-    try {
-      const { data } = await axios.post(
-        `${import.meta.env.VITE_API_URL}/wish-list`,
-        blogData
-      );
-      // console.log(data);
-      toast.success("Blog added Successfully to the wish-list!");
-    } catch (err) {
-      console.log(err);
+    if (user) {
+      // console.log(blogData);
+      try {
+        const { data } = await axios.post(
+          `${import.meta.env.VITE_API_URL}/wish-list`,
+          blogData
+        );
+        // console.log(data);
+        toast.success("Blog added Successfully to the wish-list!");
+      } catch (err) {
+        // console.log(err);
+      }
+    } else {
+      navigate("/login");
     }
   };
   return (
@@ -45,7 +50,10 @@ const BlogCard = ({
         <p className="text-gray-700 text-base mt-2">{shortDescription}</p>
       </div>
       <div className="px-6 py-4">
-        <Link to={`/details/${blogId}`} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2">
+        <Link
+          to={`/details/${blogId}`}
+          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2"
+        >
           Details
         </Link>
         <Link

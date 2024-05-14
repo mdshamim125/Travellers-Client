@@ -11,6 +11,7 @@ import WishList from "./../../pages/wishlist/WishList";
 import MyBlogs from "../../pages/my-blog/MyBlogs";
 import UpdateBlog from "../../pages/my-blog/UpdateBlog";
 import BlogDetails from "../../pages/blog-details/BlogDetails";
+import PrivateRoute from "../private-route/PrivateRoute";
 
 export const router = createBrowserRouter([
   {
@@ -44,7 +45,11 @@ export const router = createBrowserRouter([
       },
       {
         path: "/wish-list",
-        element: <WishList></WishList>,
+        element: (
+          <PrivateRoute>
+            <WishList></WishList>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/my-blogs",
@@ -56,7 +61,11 @@ export const router = createBrowserRouter([
       },
       {
         path: "/details/:id",
-        element: <BlogDetails />,
+        element: (
+          <PrivateRoute>
+            <BlogDetails />
+          </PrivateRoute>
+        ),
       },
     ],
   },

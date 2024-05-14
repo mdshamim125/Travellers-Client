@@ -17,7 +17,7 @@ const WishList = () => {
     };
     getData();
   }, [email]);
-  console.log(wishList);
+  // console.log(wishList);
 
   const removeHandlerFromWishList = async (blogId) => {
     try {

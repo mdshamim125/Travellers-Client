@@ -74,7 +74,7 @@ const Register = () => {
         },
         { withCredentials: true }
       );
-      console.log(data);
+      // console.log(data);
       toast.success("Sign-in Successful");
       navigate(from, { replace: true });
     } catch (err) {

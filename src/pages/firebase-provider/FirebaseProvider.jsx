@@ -52,11 +52,17 @@ const FirebaseProvider = ({ children }) => {
   }, []);
 
   const logout = async () => {
-    setUser(null);
     signOut(auth);
-    const { data } = await axios(`${import.meta.env.VITE_API_URL}/logout`, {
-      withCredentials: true,
-    });
+    setUser(null);
+    const { data } = await axios.post(
+      `${import.meta.env.VITE_API_URL}/logout`,
+      {},
+      {
+        withCredentials: true,
+      }
+    );
+    console.log(data);
+
     setLoading(false);
   };
 

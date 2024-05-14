@@ -45,7 +45,7 @@ const BlogCard = ({
         <p className="text-gray-700 text-base mt-2">{shortDescription}</p>
       </div>
       <div className="px-6 py-4">
-        <Link className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2">
+        <Link to={`/details/${blogId}`} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2">
           Details
         </Link>
         <Link

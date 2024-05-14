@@ -14,4 +14,4 @@ Welcome to TRAVELERS!
 - **User-Friendly Interface**: It is the most attractive thing in this website.You can register, login our travelers and also you can added your blogs of different categories if you are logged-in.
 - **Responsive Design**: Access TRAVELERS from any device, whether it's your desktop, tablet, or smartphone.
 
--**Users Can Subscribe Us To Get Latest News**: To know about the beautiful places with marvelous journey.
+- **Users Can Subscribe Us To Get Latest News**: To know about the beautiful places with marvelous journey.

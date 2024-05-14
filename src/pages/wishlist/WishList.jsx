@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import useAuth from "../../hooks/Hooks";
 import axios from "axios";
 import toast from "react-hot-toast";
+import { Link } from "react-router-dom";
 
 const WishList = () => {
   const [wishList, setWishList] = useState([]);
@@ -49,9 +50,9 @@ const WishList = () => {
             </p>
             <p className="text-gray-600">{blog.shortDescription}</p>
 
-            <button className="bg-blue-500 text-white py-1 px-2 rounded-md mt-2 mr-2">
+            <Link to={`/details/${blog.blogId}`} className="bg-blue-500 text-white py-1 px-2 rounded-md mt-2 mr-2">
               Details
-            </button>
+            </Link>
             <button
               className="bg-red-500 text-white py-1 px-2 rounded-md mt-2"
               onClick={() => removeHandlerFromWishList(blog.blogId)}

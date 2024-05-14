@@ -18,11 +18,11 @@ const NewsLetter = () => {
                 Subscribe To The{" "}
                 <span className="text-blue-500">Newsletter</span>
               </h1>
-{/* 
-              <p className="mt-3 text-gray-600 dark:text-gray-400">
-                be the first to knows when our{" "}
-                <span className="font-medium text-blue-500">Brand</span> is live
-              </p> */}
+
+              <p className="mt-3 text-gray-600 text-xl dark:text-gray-400">
+                subscribe our newsletter{" "}
+                to get the latest new from us
+              </p>
 
               <form onSubmit={handleSubscribe}>
                 <div className="flex flex-col mt-6 space-y-3 lg:space-y-0 lg:flex-row">

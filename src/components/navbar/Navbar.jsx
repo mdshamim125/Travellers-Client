@@ -110,12 +110,12 @@ const Navbar = () => {
               {links}
             </ul>
           </div>
-          <Link to='/' className="flex justify-center items-center">
+          <Link to="/" className="flex justify-center items-center">
             <a className="text-base md:text-xl lg:text-3xl font-bold ml-1 flex gap-0">
               TRAV<span className="text-blue-600">ELERS</span>
             </a>
             <img
-              src="/public/TRAVELING_BLOG-.png"
+              src="https://i.ibb.co/BKjT4BM/TRAVELING-BLOG.png"
               className="w-16 ml-1 bg-black rounded-full"
             />
           </Link>

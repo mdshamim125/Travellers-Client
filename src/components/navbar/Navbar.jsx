@@ -116,12 +116,12 @@ const Navbar = () => {
             </a>
             <img
               src="https://i.ibb.co/BKjT4BM/TRAVELING-BLOG.png"
-              className="w-16 ml-1 bg-black rounded-full"
+              className="w-16 ml-1 bg-slate-300 rounded-full"
             />
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1 text-white font-bold">
+          <ul className="menu menu-horizontal px-1 text-white text-base font-semibold">
             {links}
           </ul>
         </div>
@@ -183,7 +183,7 @@ const Navbar = () => {
                       tabIndex={0}
                       className="btn btn-ghost btn-circle avatar"
                     >
-                      <div className="w-10 rounded-full">
+                      <div className="w-16 rounded-full">
                         <img
                           title={displayName}
                           src={photoURL}

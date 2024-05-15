@@ -19,7 +19,7 @@ const MyBlogs = () => {
     getData();
   }, [user]);
 
-//   console.log(myBlogs);
+  console.log(myBlogs);
   return (
     <div className="min-h-[calc(100vh-250px)] my-12">
       <h2 className="text-center font-bold text-2xl mt-10 mb-4">My Added Blogs</h2>

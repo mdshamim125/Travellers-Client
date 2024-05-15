@@ -12,6 +12,7 @@ import MyBlogs from "../../pages/my-blog/MyBlogs";
 import UpdateBlog from "../../pages/my-blog/UpdateBlog";
 import BlogDetails from "../../pages/blog-details/BlogDetails";
 import PrivateRoute from "../private-route/PrivateRoute";
+import Comments from "../../pages/blog-details/Comments";
 
 export const router = createBrowserRouter([
   {
@@ -64,6 +65,14 @@ export const router = createBrowserRouter([
         element: (
           <PrivateRoute>
             <BlogDetails />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/comments",
+        element: (
+          <PrivateRoute>
+            <Comments />
           </PrivateRoute>
         ),
       },

@@ -17,3 +17,17 @@ Welcome to TRAVELERS!
 - **Responsive Design**: Access TRAVELERS from any device, whether it's your desktop, tablet, or smartphone.
 
 - **Users Can Subscribe Us To Get Latest News**: To know about the beautiful places with marvelous journey.
+
+
+## NPM Packages used
+
+ "@tanstack/react-table": "^8.17.3",
+    "axios": "^1.6.8",
+    "firebase": "^10.11.1",
+    "react": "^18.2.0",
+    "react-data-table-component": "^7.6.2",
+    "react-dom": "^18.2.0",
+    "react-hot-toast": "^2.4.1",
+    "react-router-dom": "^6.23.0",
+    "react-spinners": "^0.13.8",
+    "react-table": "^7.8.0"

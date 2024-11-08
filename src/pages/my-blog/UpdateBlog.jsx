@@ -79,7 +79,7 @@ const UpdateBlog = () => {
       <h2 className="text-white text-2xl font-bold mb-4 text-center mt-6">
         Update Your Blog Here
       </h2>
-      <form onSubmit={handleSubmit} className="space-y-4">
+      <form onSubmit={handleSubmit} className="space-y-4 text-white ">
         <div>
           <label htmlFor="title" className="block font-semibold">
             Title:

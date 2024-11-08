@@ -14,7 +14,7 @@ const NewsLetter = () => {
         <div className="items-center lg:flex">
           <div className="w-full lg:w-1/2">
             <div className="lg:max-w-lg">
-              <h1 className="text-3xl font-semibold text-gray-800 dark:text-white lg:text-4xl">
+              <h1 className="text-3xl  font-semibold text-white dark:text-white lg:text-4xl">
                 Subscribe To The{" "}
                 <span className="text-blue-500">Newsletter</span>
               </h1>

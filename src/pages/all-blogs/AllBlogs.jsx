@@ -77,6 +77,8 @@ const AllBlogs = () => {
             image={blog.image}
             shortDescription={blog.short_description}
             longDescription={blog.long_description}
+            bloggerProfile={blog.blog_owner_profile}
+            blogger={blog.blog_owner}
           />
         ))}
       </div>

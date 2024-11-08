@@ -10,14 +10,14 @@ const RecentBlogs = () => {
   useEffect(() => {
     const getData = async () => {
       const { data } = await axios(
-        `${import.meta.env.VITE_API_URL}/recent-blogs`
+        `${import.meta.env.VITE_API_URL}/recent-blogs?limit=6`
       );
       setBlogs(data);
     };
     getData();
   }, []);
 
-  //   console.log(blogs);
+    console.log(blogs);
 
   return (
     <div className="">
@@ -34,6 +34,8 @@ const RecentBlogs = () => {
             category={blog.category}
             image={blog.image}
             shortDescription={blog.short_description}
+            bloggerProfile={blog.blog_owner_profile}
+            blogger={blog.blog_owner}
           />
         ))}
       </div>

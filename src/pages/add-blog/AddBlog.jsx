@@ -21,6 +21,7 @@ const AddBlog = () => {
       short_description,
       long_description,
       email,
+      createdAt: new Date().toISOString(), // Add the current date
     };
 
     try {

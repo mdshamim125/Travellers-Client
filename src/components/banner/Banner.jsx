@@ -1,34 +1,47 @@
-
+import { Typewriter } from 'react-simple-typewriter';
 
 const Banner = () => {
   return (
-    <header className="bg-slate-300 dark:bg-gray-900">
-      <div className="container px-6 py-16 mx-auto">
+    <header
+      className="relative bg-cover bg-center bg-no-repeat flex items-center justify-center"
+      style={{
+        backgroundImage:
+          "url('https://i.ibb.co/jbzSfwD/mike-swigunski-Fz0-XVa-r-LQI-unsplash.jpg')",
+        minHeight: "calc(100vh - 80px)", // Adjust 80px to match your navbar height
+      }}
+    >
+      <div className="absolute inset-0 bg-gradient-to-r from-gray-950 via-transparent to-gray-950 opacity-70"></div>
+      <div className="relative container px-6 py-16 mx-auto">
         <div className="items-center lg:flex">
           <div className="w-full lg:w-1/2">
             <div className="lg:max-w-lg">
-              <h1 className="text-3xl font-semibold text-gray-800 dark:text-white lg:text-4xl">
-                Welcome To  Our<br /> Traveling{" "}
-                <span className="text-blue-500">Blog</span>
+              <h1 className="text-3xl font-semibold text-white lg:text-4xl">
+                Welcome To Our <br />
+                <span className="text-blue-500">
+                  <Typewriter
+                    words={['Travelers']}
+                    loop={true}
+                    cursor
+                    cursorStyle="|"
+                    typeSpeed={100}
+                    deleteSpeed={50}
+                    delaySpeed={2000}
+                  />
+                </span>
               </h1>
 
-              <p className="mt-3 text-gray-600 dark:text-gray-400">
-            Explore the wonders of the world with us as we embark on exciting adventures, uncover hidden gems, and share unforgettable experiences. Join our community of fellow travelers and discover the joy of exploration, one destination at a time.
-          </p>
-
+              <p className="mt-3 text-gray-200">
+                Explore the wonders of the world with us as we embark on
+                exciting adventures, uncover hidden gems, and share
+                unforgettable experiences. Join our community of fellow
+                travelers and discover the joy of exploration, one destination
+                at a time.
+              </p>
 
               <button className="w-full px-5 py-2 mt-6 text-sm tracking-wider text-white uppercase transition-colors duration-300 transform bg-blue-600 rounded-lg lg:w-auto hover:bg-blue-500 focus:outline-none focus:bg-blue-500">
                 Explore Now
               </button>
             </div>
-          </div>
-
-          <div className="flex items-center justify-center w-full mt-6 lg:mt-0 lg:w-1/2">
-            <img
-              className="w-[700px] h-[400px] rounded-md"
-              src="https://i.ibb.co/jbzSfwD/mike-swigunski-Fz0-XVa-r-LQI-unsplash.jpg"
-              alt="Catalogue-pana.svg"
-            />
           </div>
         </div>
       </div>

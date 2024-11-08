@@ -1,3 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Light theme gradient */
+[data-theme='light'] {
+  body {
+    background: linear-gradient(to right, #1e1244, #110624); /* Light theme gradient */
+    background-attachment: fixed; /* Keeps gradient fixed when scrolling */
+    /* color: white; Text color for light theme */
+  }
+}
+
+/* Dark theme gradient */
+[data-theme='dark'] {
+  body {
+    background:black; /* Dark theme gradient */
+    background-attachment: fixed; /* Keeps gradient fixed when scrolling */
+    color: white; /* Text color for dark theme */
+  }
+}

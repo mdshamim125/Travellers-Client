@@ -37,7 +37,7 @@ const AddBlog = () => {
   };
 
   return (
-    <div className="w-full px-4 md:max-w-3xl mx-auto">
+    <div className="w-full px-4 container mx-auto">
       <h2 className="text-2xl font-bold mb-4 text-center mt-6">
         Add Your Blog Here
       </h2>

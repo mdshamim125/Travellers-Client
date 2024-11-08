@@ -3,20 +3,23 @@ import { useEffect } from "react";
 import toast from "react-hot-toast";
 import useAuth from "../../hooks/Hooks";
 import axios from "axios";
+
 const Login = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const { signInUser, googleLogin, user } = useAuth();
+
   useEffect(() => {
     if (user) {
       navigate("/");
     }
   }, [navigate, user]);
+
   const from = location.state || "/";
+
   const handleGoogleSignIn = async () => {
     try {
       const result = await googleLogin();
-      // console.log(result.user);
       const { data } = await axios.post(
         `${import.meta.env.VITE_API_URL}/jwt`,
         {
@@ -24,12 +27,10 @@ const Login = () => {
         },
         { withCredentials: true }
       );
-      // console.log(data);
       toast.success("Sign-in Successful");
       navigate(from, { replace: true });
     } catch (err) {
-      // console.log(err);
-      toast.error("something went wrong!");
+      toast.error("Something went wrong!");
     }
   };
 
@@ -38,10 +39,8 @@ const Login = () => {
     const form = e.target;
     const email = form.email.value;
     const pass = form.password.value;
-    // console.log({ email, pass });
     try {
       const result = await signInUser(email, pass);
-      // console.log(result.user);
       const { data } = await axios.post(
         `${import.meta.env.VITE_API_URL}/jwt`,
         {
@@ -49,29 +48,22 @@ const Login = () => {
         },
         { withCredentials: true }
       );
-      // console.log(data);
       toast.success("Sign-in Successful");
       navigate(from, { replace: true });
     } catch (err) {
-      // console.log(err);
-      toast.error("please enter a valid email or password!");
+      toast.error("Please enter a valid email or password!");
     }
   };
+
   if (user) return;
+
   return (
     <div className="flex justify-center items-center min-h-[calc(100vh-306px)] my-12">
-      <div className="flex w-full max-w-sm mx-auto overflow-hidden bg-white rounded-lg shadow-lg  lg:max-w-4xl ">
-        {/* <div
-          className="hidden bg-cover bg-center lg:block lg:w-1/2"
-          style={{
-            backgroundImage: `url(${bgImg})`,
-          }}
-        ></div> */}
-
+      <div className="flex w-full max-w-sm mx-auto overflow-hidden bg-gradient-to-b from-[rgba(1,3,19,0.41)] to-[#0204155b] rounded-lg shadow-lg lg:max-w-4xl">
         <div className="w-full mx-auto px-6 py-8 md:px-8 lg:w-1/2">
           <div
             onClick={handleGoogleSignIn}
-            className="flex cursor-pointer items-center justify-center mt-4 text-gray-600 transition-colors duration-300 transform border rounded-lg   hover:bg-gray-50 "
+            className="flex cursor-pointer items-center justify-center mt-4 text-white transition-colors duration-300 transform border rounded-lg hover:bg-gray-50 "
           >
             <div className="px-4 py-2">
               <svg className="w-6 h-6" viewBox="0 0 40 40">
@@ -93,25 +85,23 @@ const Login = () => {
                 />
               </svg>
             </div>
-
-            <span className="w-5/6 px-4 py-3 font-bold text-center">
+            <span className="w-5/6 px-4 py-3 font-bold text-center text-white">
               Sign in with Google
             </span>
           </div>
 
           <div className="flex items-center justify-between mt-4">
-            <span className="w-1/5 border-b  lg:w-1/4"></span>
-
-            <div className="text-xs text-center text-gray-500 uppercase  hover:underline">
+            <span className="w-1/5 border-b lg:w-1/4"></span>
+            <div className="text-xs text-center text-white uppercase hover:underline">
               or login with email
             </div>
-
             <span className="w-1/5 border-b dark:border-gray-400 lg:w-1/4"></span>
           </div>
+
           <form onSubmit={handleSignIn}>
             <div className="mt-4">
               <label
-                className="block mb-2 text-sm font-medium text-gray-600 "
+                className="block mb-2 text-sm font-medium text-white"
                 htmlFor="LoggingEmailAddress"
               >
                 Email Address
@@ -121,7 +111,7 @@ const Login = () => {
                 placeholder="Email Address"
                 autoComplete="email"
                 name="email"
-                className="block w-full px-4 py-2 text-gray-700 bg-white border rounded-lg    focus:border-blue-400 focus:ring-opacity-40  focus:outline-none focus:ring focus:ring-blue-300"
+                className="block w-full px-4 py-2 text-gray-700 bg-white border rounded-lg focus:border-blue-400 focus:ring-opacity-40 focus:outline-none focus:ring focus:ring-blue-300"
                 type="email"
                 required
               />
@@ -130,23 +120,23 @@ const Login = () => {
             <div className="mt-4">
               <div className="flex justify-between">
                 <label
-                  className="block mb-2 text-sm font-medium text-gray-600 "
+                  className="block mb-2 text-sm font-medium text-white"
                   htmlFor="loggingPassword"
                 >
                   Password
                 </label>
               </div>
-
               <input
                 id="loggingPassword"
                 autoComplete="current-password"
                 placeholder="Password"
                 name="password"
-                className="block w-full px-4 py-2 text-gray-700 bg-white border rounded-lg    focus:border-blue-400 focus:ring-opacity-40  focus:outline-none focus:ring focus:ring-blue-300"
+                className="block w-full px-4 py-2 text-gray-700 bg-white border rounded-lg focus:border-blue-400 focus:ring-opacity-40 focus:outline-none focus:ring focus:ring-blue-300"
                 type="password"
                 required
               />
             </div>
+
             <div className="mt-6">
               <button
                 type="submit"
@@ -158,16 +148,14 @@ const Login = () => {
           </form>
 
           <div className="flex items-center justify-between mt-4">
-            <span className="w-1/5 border-b  md:w-1/4"></span>
-
+            <span className="w-1/5 border-b md:w-1/4"></span>
             <Link
               to="/register"
-              className="text-xs text-gray-500 uppercase  hover:underline"
+              className="text-xs text-white uppercase hover:underline"
             >
               or sign up
             </Link>
-
-            <span className="w-1/5 border-b  md:w-1/4"></span>
+            <span className="w-1/5 border-b md:w-1/4"></span>
           </div>
         </div>
       </div>

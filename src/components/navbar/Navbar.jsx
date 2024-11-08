@@ -80,7 +80,7 @@ const Navbar = () => {
 
   return (
     <div>
-      <div className="navbar p-2 md:px-10 bg-emerald-500">
+      <div className="navbar p-2 md:px-10 shadow-lg bg-gradient-to-b from-[rgba(1,3,19,0.39)] to-[#020415a3]">
         <div className="navbar-start">
           <div className="dropdown">
             <div

@@ -55,7 +55,7 @@ const BlogDetails = () => {
 
   return (
     <div className="min-h-[calc(100vh-250px)] my-12">
-      <div className="max-w-4xl mx-auto p-6 bg-white shadow-lg rounded-lg">
+      <div className="container mx-auto p-6  shadow-lg rounded-lg">
         <img
           src={blog.image}
           alt={blog.title}

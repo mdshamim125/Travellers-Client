@@ -20,12 +20,12 @@ const RecentBlogs = () => {
   //   console.log(blogs);
 
   return (
-    <div>
+    <div className="">
       <h2 className="text-3xl my-10 font-bold text-center">
         Recent Blogs Section
       </h2>
 
-      <div className="container px-6 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-between mb-16">
+      <div className="container  px-6 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-between mb-16">
         {blogs.slice(0, 6).map((blog, index) => (
           <BlogCard
             key={index}

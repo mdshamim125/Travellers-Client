@@ -31,7 +31,7 @@ const WishList = () => {
     }
   };
 
-  console.log(wishList);
+  // console.log(wishList);
   return (
     <div className="min-h-[calc(100vh-250px)] my-12">
       <h3 className="text-center text-white font-bold text-2xl mt-10 mb-4">

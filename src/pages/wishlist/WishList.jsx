@@ -33,7 +33,7 @@ const WishList = () => {
 
   return (
     <div className="min-h-[calc(100vh-250px)] my-12">
-      <h3 className="text-center font-bold text-2xl mt-10 mb-4">
+      <h3 className="text-center text-white font-bold text-2xl mt-10 mb-4">
         My Wish-List
       </h3>
       <div className="container px-6 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-between mb-16">

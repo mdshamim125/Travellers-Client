@@ -21,7 +21,7 @@ const RecentBlogs = () => {
 
   return (
     <div className="">
-      <h2 className="text-3xl my-10 font-bold text-center">
+      <h2 className="text-white text-3xl my-10 font-bold text-center">
         Recent Blogs Section
       </h2>
 

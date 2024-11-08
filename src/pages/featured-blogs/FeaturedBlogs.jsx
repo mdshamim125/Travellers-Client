@@ -31,12 +31,12 @@ const FeaturedBlogs = () => {
 
   return (
     <div className="container mx-auto py-8">
-      <h1 className="text-3xl text-center font-semibold mb-6">
+      <h1 className="text-3xl text-center font-semibold mb-6 text-white">
         Featured Blogs
       </h1>
       <div className="overflow-x-auto">
-        <table className="table table-zebra w-full">
-          <thead>
+        <table className="table  w-full text-white">
+          <thead className="text-white">
             <tr>
               <th>Serial Number</th>
               <th>Blog Title</th>

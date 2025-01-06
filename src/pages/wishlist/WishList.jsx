@@ -1,8 +1,10 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import useAuth from "../../hooks/Hooks";
 import axios from "axios";
 import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
+import AOS from "aos"; // Import AOS
+import "aos/dist/aos.css"; // Import AOS CSS
 
 const WishList = () => {
   const [wishList, setWishList] = useState([]);
@@ -10,6 +12,13 @@ const WishList = () => {
   const email = user?.email;
 
   useEffect(() => {
+    // Initialize AOS
+    AOS.init({
+      duration: 1000, // Duration of the animation in ms
+      offset: 200, // Offset for triggering the animation
+      easing: "ease-in-out", // Easing function for the animation
+    });
+
     const getData = async () => {
       const { data } = await axios(
         `${import.meta.env.VITE_API_URL}/wish-list/${email}`
@@ -31,15 +40,24 @@ const WishList = () => {
     }
   };
 
-  // console.log(wishList);
   return (
     <div className="min-h-[calc(100vh-250px)] my-12">
-      <h3 className="text-center text-white font-bold text-2xl mt-10 mb-4">
+      <h3
+        className="text-center text-white font-bold text-2xl mt-10 mb-4"
+        data-aos="fade-up" // Apply AOS animation
+      >
         My Wish-List
       </h3>
-      <div className="container px-6 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-between mb-16">
+      <div
+        className="container px-6 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-between mb-16"
+        data-aos="fade-up" // Apply AOS animation
+      >
         {wishList.map((blog) => (
-          <div key={blog.blogId} className="my-4 border p-4 rounded-md">
+          <div
+            key={blog.blogId}
+            className="my-4 border p-4 rounded-md"
+            data-aos="zoom-in" // Apply AOS animation for each card
+          >
             {/* Background image section with title, category, and blogger info */}
             <div
               className="relative w-full h-[200px] bg-cover bg-center rounded-md"
@@ -49,20 +67,18 @@ const WishList = () => {
               <div className="relative z-10 px-6 py-4">
                 <h2 className="font-bold text-xl text-white">{blog.title}</h2>
                 <p className="text-cyan-400 font-medium">{blog.category}</p>
-
-                
               </div>
             </div>
 
             {/* Blogger info */}
             <div className="flex items-center mt-4">
-                  <img
-                    src={blog.bloggerProfile}
-                    alt={blog.blogger}
-                    className="w-8 h-8 rounded-full border-2 border-white mr-2"
-                  />
-                  <p className="text-white font-medium">{blog.blogger}</p>
-                </div>
+              <img
+                src={blog.bloggerProfile}
+                alt={blog.blogger}
+                className="w-8 h-8 rounded-full border-2 border-white mr-2"
+              />
+              <p className="text-white font-medium">{blog.blogger}</p>
+            </div>
 
             {/* Short description section */}
             <div className="py-2">
@@ -70,7 +86,7 @@ const WishList = () => {
             </div>
 
             {/* Action buttons */}
-            <div className=" py-4 flex space-x-2">
+            <div className="py-4 flex space-x-2">
               <Link
                 to={`/details/${blog.blogId}`}
                 className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded-md"

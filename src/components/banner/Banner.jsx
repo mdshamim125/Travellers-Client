@@ -1,6 +1,11 @@
 import { Typewriter } from 'react-simple-typewriter';
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
+// ..
+AOS.init();
 
 const Banner = () => {
+  
   return (
     <header
       className="relative bg-cover bg-center bg-no-repeat flex items-center justify-center"
@@ -13,7 +18,8 @@ const Banner = () => {
       <div className="absolute inset-0 bg-gradient-to-r from-gray-950 via-transparent to-gray-950 opacity-70"></div>
       <div className="relative container px-6 py-16 mx-auto">
         <div className="items-center lg:flex">
-          <div className="w-full lg:w-1/2">
+          <div className="w-full lg:w-1/2" data-aos="fade-right" data-aos-duration="1000"
+    data-aos-easing="ease-in-out">
             <div className="lg:max-w-lg">
               <h1 className="text-3xl font-semibold text-white lg:text-4xl">
                 Welcome To Our <br />

@@ -1,6 +1,8 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import BlogCard from "../recent-blogs/BlogCard";
+import AOS from "aos"; // Import AOS
+import "aos/dist/aos.css"; // Import AOS CSS
 
 const AllBlogs = () => {
   const [blogs, setBlogs] = useState([]);
@@ -9,6 +11,13 @@ const AllBlogs = () => {
   const [searchText, setSearchText] = useState("");
 
   useEffect(() => {
+    // Initialize AOS
+    AOS.init({
+      duration: 1000, // Duration of the animation in ms
+      offset: 200, // Offset for triggering the animation
+      easing: "ease-in-out", // Easing function for the animation
+    });
+
     const getData = async () => {
       const { data } = await axios(
         `${
@@ -20,11 +29,8 @@ const AllBlogs = () => {
     getData();
   }, [filter, search]);
 
-  // console.log(blogs);
-
   const handleSearch = (e) => {
     e.preventDefault();
-
     setSearch(searchText);
   };
 
@@ -49,7 +55,7 @@ const AllBlogs = () => {
         </div>
 
         <form onSubmit={handleSearch}>
-          <div className="flex p-1 overflow-hidden border rounded-lg    focus-within:ring focus-within:ring-opacity-40 focus-within:border-blue-400 focus-within:ring-blue-300">
+          <div className="flex p-1 overflow-hidden border rounded-lg focus-within:ring focus-within:ring-opacity-40 focus-within:border-blue-400 focus-within:ring-blue-300">
             <input
               className="px-6 py-2 text-gray-700 placeholder-gray-500 bg-white outline-none focus:placeholder-transparent"
               type="text"
@@ -59,7 +65,6 @@ const AllBlogs = () => {
               placeholder="Enter Blog Title"
               aria-label="Enter Blog Title"
             />
-
             <button className="px-1 md:px-4 py-3 text-sm font-medium tracking-wider text-gray-100 uppercase transition-colors duration-300 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:bg-gray-600 focus:outline-none">
               Search
             </button>
@@ -69,17 +74,22 @@ const AllBlogs = () => {
 
       <div className="container px-6 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-between mb-16">
         {blogs.map((blog, index) => (
-          <BlogCard
+          <div
             key={index}
-            blogId={blog._id}
-            title={blog.title}
-            category={blog.category}
-            image={blog.image}
-            shortDescription={blog.short_description}
-            longDescription={blog.long_description}
-            bloggerProfile={blog.blog_owner_profile}
-            blogger={blog.blog_owner}
-          />
+            data-aos="fade-up" // Apply fade-up animation
+            data-aos-delay={index * 100} // Stagger animations for cards
+          >
+            <BlogCard
+              blogId={blog._id}
+              title={blog.title}
+              category={blog.category}
+              image={blog.image}
+              shortDescription={blog.short_description}
+              longDescription={blog.long_description}
+              bloggerProfile={blog.blog_owner_profile}
+              blogger={blog.blog_owner}
+            />
+          </div>
         ))}
       </div>
     </div>

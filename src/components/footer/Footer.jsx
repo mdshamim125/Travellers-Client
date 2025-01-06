@@ -1,9 +1,18 @@
-
+import AOS from "aos"; // Import AOS
+import "aos/dist/aos.css"; // Import AOS CSS
+import { useEffect } from "react";
 const Footer = () => {
+  useEffect(() => {
+    // Initialize AOS
+    AOS.init({
+      duration: 1000, // Duration of the animation
+      offset: 200, // Offset for triggering animation
+      easing: "ease-in-out", // Animation easing
+    })});
   return (
     <footer className="dark:bg-gray-900 mt-10 bg-gradient-to-b from-[rgba(1,3,19,0.39)] to-[#020415a3]
 ">
-      <div className="container p-6 mx-auto">
+      <div className="container p-6 mx-auto" data-aos="fade-up">
         <div className="lg:flex">
           <div className="w-full lg:w-2/5">
             <div className="px-6">

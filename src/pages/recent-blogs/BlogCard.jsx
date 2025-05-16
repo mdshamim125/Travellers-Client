@@ -2,6 +2,7 @@ import axios from "axios";
 import toast from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/Hooks";
+import PropTypes from "prop-types";
 
 const BlogCard = ({
   blogId,
@@ -31,10 +32,7 @@ const BlogCard = ({
   const wishListHandler = async (blogData) => {
     if (user) {
       try {
-        const { data } = await axios.post(
-          `${import.meta.env.VITE_API_URL}/wish-list`,
-          blogData
-        );
+        await axios.post(`${import.meta.env.VITE_API_URL}/wish-list`, blogData);
         toast.success("Blog added Successfully to the wish-list!");
       } catch (err) {
         console.error(err);
@@ -90,6 +88,17 @@ const BlogCard = ({
       </div>
     </div>
   );
+};
+
+BlogCard.propTypes = {
+  blogId: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  category: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+  shortDescription: PropTypes.string.isRequired,
+  longDescription: PropTypes.string,
+  bloggerProfile: PropTypes.string.isRequired,
+  blogger: PropTypes.string.isRequired,
 };
 
 export default BlogCard;

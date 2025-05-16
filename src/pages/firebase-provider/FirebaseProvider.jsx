@@ -61,7 +61,7 @@ const FirebaseProvider = ({ children }) => {
         withCredentials: true,
       }
     );
-    console.log(data);
+    // console.log(data);
 
     setLoading(false);
   };

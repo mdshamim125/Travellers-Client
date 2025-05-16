@@ -32,10 +32,10 @@ const AllBlogs = () => {
         const apiUrl = `${
           import.meta.env.VITE_API_URL
         }/all-blogs?filter=${filter}&search=${search}&page=${currentPage}&limit=${blogsPerPage}`;
-        console.log("Fetching data from:", apiUrl);
+        // console.log("Fetching data from:", apiUrl);
 
         const response = await axios(apiUrl);
-        console.log("API Response:", response.data);
+        // console.log("API Response:", response.data);
 
         if (!response.data) {
           throw new Error("No data received from the server");
